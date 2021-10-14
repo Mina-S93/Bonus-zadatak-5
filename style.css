@@ -1,0 +1,249 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  position: relative;
+  background-color: rgba(188, 188, 226, 0.363);
+}
+
+.loader{
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(122, 122, 122, 0.411);
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-top: 10%;
+}
+
+.load {
+  width: 300px;
+  height: 25px;
+  border-bottom-right-radius: 150px;  
+  border-top-left-radius: 150px;  
+  border-top-right-radius: 50px;  
+  border-bottom-left-radius: 20px;  
+  background-color: rgb(168, 107, 224);
+  animation: spin 2s linear infinite;
+  margin: 10% auto;
+}
+
+@keyframes spin {
+  0% { 
+    width: 0;
+  }
+  25%{
+    width: 150px;
+    border-bottom-right-radius: 50px;  
+    border-top-left-radius: 50px;  
+    border-top-right-radius: 50px;  
+    border-bottom-left-radius: 50px; 
+  }
+  50%{
+    width: 300px;
+    border-bottom-right-radius: 20px;  
+    border-top-left-radius: 20px;  
+    border-top-right-radius: 100px;  
+    border-bottom-left-radius: 100px; 
+  }
+  75%{
+    width: 150px;
+    border-bottom-right-radius: 50px;  
+    border-top-left-radius: 50px;  
+    border-top-right-radius: 50px;  
+    border-bottom-left-radius: 50px; 
+  }
+  100% { 
+    width: 0;
+  }
+}
+
+h1{
+  font-size: 2.5em;
+  width: 80%;
+  margin: 2% auto;
+  color: blueviolet;
+  text-shadow: 6px 6px 10px blue;
+}
+
+.block-list{
+  width: 90%;
+  margin: auto;
+  text-align: end;
+  border-bottom: 3px solid #607080;
+  font-size: 2em;
+  color: blueviolet;
+  padding-bottom: 0.5%;
+}
+
+.block{
+  margin-right: 1%;
+}
+
+.block, .list{
+  cursor: pointer;
+}
+
+.block:hover, .list:hover{
+  color: blue;
+} 
+
+.container{
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-top: 2%;
+}
+
+.block-container .img-container{
+  flex-basis: 30%;
+}
+
+.list-container .img-container img{
+  margin: auto;
+  display: block;
+  max-height: 50vh;
+  width: auto;
+  margin-bottom: 2%;
+}
+
+.list-container .img-container{
+  flex-basis: 100%;
+}
+
+.list-container .img-container .info{
+  width: 100%;
+  line-height: 2.5em;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.list-container .img-container .info .user-info,
+.list-container .img-container .info .social{
+  width: 20%;
+}
+
+.img-container{
+  height: max-content;
+  margin-bottom: 3%;
+  line-height: 1.5em;
+  color: blue;
+
+}
+
+.info{
+  border-right: 1px solid blueviolet;
+  border-bottom-right-radius: 40px;
+  border-bottom: 1px solid blueviolet;
+  padding-bottom: 2%;
+  box-shadow: 3px 3px 5px rgba(137, 43, 226, 0.87);
+}
+
+.img{
+  width: 100%;
+  cursor: pointer;
+  border-top-left-radius: 40px;
+  border-bottom-right-radius: 40px;
+}
+
+.img-container i{
+  color: blueviolet;
+  font-size: 1.2em;
+}
+
+.img-container a{
+  text-decoration: none;
+}
+
+.img-container .social{
+  text-align: center;
+}
+
+.img-container .social a{
+  margin-right: 5%;
+}
+
+.avatar{
+  border-top-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+}
+
+.name{
+  margin-left: 5%;
+}
+
+.user-info{
+  display: flex;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+.modal {
+  display: none;
+  position: fixed; 
+  z-index: 1; 
+  padding: 2% 0;
+  left: 0;
+  top: 0;
+  width: 100%; 
+  height: 100%; 
+  overflow: auto; 
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.9); 
+}
+
+.modal-content {
+  margin: auto;
+  display: block;
+  object-fit: contain;
+  height: 100%;
+}
+
+.modal-content{
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform:scale(0)}
+  to {transform:scale(1)}
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media screen and (max-width:600px) {
+  .h1{
+    margin: 5% 0;
+  border-bottom: 3px solid #607080;
+  }
+
+  .block-list{
+    display: none;
+  }
+
+  .block-container .img-container{
+    flex-basis: 100%;
+  }
+
+}
